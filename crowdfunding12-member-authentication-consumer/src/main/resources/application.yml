@@ -1,0 +1,32 @@
+server:
+  port: 4000
+spring:
+  application:
+    name: crowd-auth
+  redis:
+    host: 192.168.74.131
+    port: 6379
+  session:
+    store-type: redis
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  main:
+    #允许存在多个Feign调用相同Service的接口
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1000/eureka
+
+feign:
+  client:
+    config:
+      default:
+        ConnectTimeOut: 10000
+        ReadTimeOut: 10000

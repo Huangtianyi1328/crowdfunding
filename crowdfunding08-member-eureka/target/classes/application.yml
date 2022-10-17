@@ -1,0 +1,12 @@
+# eureka配置
+server:
+  port: 1000
+spring:
+  application:
+    name: crowd-eureka
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:1000/eureka
